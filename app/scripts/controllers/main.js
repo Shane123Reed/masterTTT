@@ -58,7 +58,7 @@ $scope.clickSquare = function(cell){
 };
 
 
-$scope.findimg=function(cell){
+$scope.findimg = function(cell){
      switch (cell.mark){
      case "x": 
      return "img/dotsx.png";
@@ -72,7 +72,7 @@ $scope.findimg=function(cell){
 
 //location of the array ----> $scope.games[$scope.gameId].board
  $scope.hello = function () {
-     $scope.games[$scope.gameId].board[0] = "Hello!";
+     console.log('Hello!');
    };
 
 
