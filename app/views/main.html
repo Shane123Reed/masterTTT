@@ -1,24 +1,12 @@
-<!-- <h1>Game on!</h1>
-
-<div id="game">
-  <div ng-repeat="cell in games[gameId].board">
-    <div ng-bind="cell"></div>
-  </div>
-
-  <button ng-click="hello()">Hello</button>
-</div> -->
-
 <div id="container">
-	<div ng-repeat="row in ticTacToe">
-		
-		<div ng-class="{sqr:true, topLine:$parent.$index !=0, leftLine:$index !=0}" ng-repeat="cell in row" ng-bind="cell.value" ng-click="clickSquare(cell)" x="img/dotsx.png" y="img/dots.png" blank="img/1x1.png">
-		</div>
+	<div ng-repeat="row in games[gameId].board">
+		<div ng-class="{sqr:true,topLine:$parent.$index != 0, leftLine:$index !=0,rightLine:$index != 2, bottomLine:$parent.$index != 2 }" ng-repeat="cell in row" ng-click="clickSquare(cell)">
+			<img ng-src="{{findimg(cell)}}" />
+		</div>	
 		<div class="clearfix"></div>
-	</div>
+	</div>		
 </div>
 
 <a href="index.html"><h1>NEW GAME</h1></a>
 
-
-<div ng-bind="games[gameId].board[8].mark" ng-click="playMove(games[gameId].board[8])"></div>
 <div id="waiting" ng-show="games[gameId].waiting">Waiting for opponent..</div>
