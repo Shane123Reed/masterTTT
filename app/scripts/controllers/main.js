@@ -16,9 +16,9 @@ angular.module('masterTTTApp')
          $scope.player = "p1";
 
          var newGame = {
-           board: [[{mark:""},{mark:""},{mark:""}],
-                   [{mark:""},{mark:""},{mark:""}],
-                   [{mark:""},{mark:""},{mark:""}]],
+           board: [[{mark:"", r="0", c="0"},{mark:"", r="0", c="1"},{mark:"", r="0", c="2"}],
+                   [{mark:"", r="1", c="0"},{mark:"", r="1", c="1"},{mark:"", r="1", c="2"}],
+                   [{mark:"", r="2", c="0"},{mark:"", r="2", c="1"},{mark:"", r="2", c="2"}]],
            turn: 'p1',
            win: false,
            turnCount: 0,
@@ -67,13 +67,37 @@ $scope.findimg = function(cell){
      }
 };
 
+$scope.winningCombo = function() {
+//Diagonal
+if($scope.board[1][1].mark != ""){
+
+if($scope.board[0][0].mark == $scope.board[1][1].mark &&
+$scope.board[1][1].mark == $scope.board[2][2].mark ||
+$scope.board[0][2].mark == $scope.board[1][1].mark &&
+$scope.board[1][1].mark == $scope.board[2][0].mark) {
+alert("WINS");
+}
+}
 
 
+// //columns
+for (var c=0; c<=2; ++c) {
+if($scope.board[0][c].mark != "" &&
+$scope.board[0][c].mark == $scope.board[1][c].mark &&
+$scope.board[1][c].mark == $scope.board[2][c].mark) {
+alert("WINS");
+}
+}
 
-//location of the array ----> $scope.games[$scope.gameId].board
- $scope.hello = function () {
-     console.log('Hello!');
-   };
+//rows
+for (var r=0; r<=2; ++r) {
+if($scope.board[r][0].mark != "" &&
+$scope.board[r][0].mark == $scope.board[r][1].mark &&
+$scope.board[r][1].mark == $scope.board[r][2].mark) {
+alert("WINS");
+}
+}
+};
 
 
 
