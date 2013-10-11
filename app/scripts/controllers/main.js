@@ -16,9 +16,9 @@ angular.module('masterTTTApp')
          $scope.player = "p1";
 
          var newGame = {
-           board: [[{mark:"", r="0", c="0"},{mark:"", r="0", c="1"},{mark:"", r="0", c="2"}],
-                   [{mark:"", r="1", c="0"},{mark:"", r="1", c="1"},{mark:"", r="1", c="2"}],
-                   [{mark:"", r="2", c="0"},{mark:"", r="2", c="1"},{mark:"", r="2", c="2"}]],
+           board: [[{mark:"", r: "0", c: "0"},{mark:"", r: "0", c: "1"},{mark:"", r: "0", c: "2"}],
+                   [{mark:"", r: "1", c: "0"},{mark:"", r: "1", c: "1"},{mark:"", r: "1", c: "2"}],
+                   [{mark:"", r: "2", c: "0"},{mark:"", r: "2", c: "1"},{mark:"", r: "2", c: "2"}]],
            turn: 'p1',
            win: false,
            turnCount: 0,
