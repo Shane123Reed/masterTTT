@@ -54,6 +54,7 @@ $scope.clickSquare = function(cell){
          cell.mark = "x";
        else
          cell.mark = "o";
+     $scope.winningCombo();
      $scope.games[$scope.gameId].playerTurn++;
 };
 
@@ -67,36 +68,37 @@ $scope.findimg = function(cell){
      }
 };
 
+
 $scope.winningCombo = function() {
 //Diagonal
-if($scope.board[1][1].mark != ""){
+  if($scope.games[$scope.gameId].board[1][1].mark != ""){
 
-if($scope.board[0][0].mark == $scope.board[1][1].mark &&
-$scope.board[1][1].mark == $scope.board[2][2].mark ||
-$scope.board[0][2].mark == $scope.board[1][1].mark &&
-$scope.board[1][1].mark == $scope.board[2][0].mark) {
-alert("WINS");
-}
-}
+    if($scope.games[$scope.gameId].board[0][0].mark == $scope.games[$scope.gameId].board[1][1].mark &&
+      $scope.games[$scope.gameId].board[1][1].mark == $scope.games[$scope.gameId].board[2][2].mark ||
+      $scope.games[$scope.gameId].board[0][2].mark == $scope.games[$scope.gameId].board[1][1].mark &&
+      $scope.games[$scope.gameId].board[1][1].mark == $scope.games[$scope.gameId].board[2][0].mark) {
+      alert("WINS");
+      }
+  }
 
 
 // //columns
-for (var c=0; c<=2; ++c) {
-if($scope.board[0][c].mark != "" &&
-$scope.board[0][c].mark == $scope.board[1][c].mark &&
-$scope.board[1][c].mark == $scope.board[2][c].mark) {
-alert("WINS");
-}
-}
+  for (var c=0; c<=2; ++c) {
+    if($scope.games[$scope.gameId].board[0][c].mark != "" &&
+      $scope.games[$scope.gameId].board[0][c].mark == $scope.games[$scope.gameId].board[1][c].mark &&
+      $scope.games[$scope.gameId].board[1][c].mark == $scope.games[$scope.gameId].board[2][c].mark) {
+      alert("WINS");
+      }
+  }
 
 //rows
-for (var r=0; r<=2; ++r) {
-if($scope.board[r][0].mark != "" &&
-$scope.board[r][0].mark == $scope.board[r][1].mark &&
-$scope.board[r][1].mark == $scope.board[r][2].mark) {
-alert("WINS");
-}
-}
+  for (var r=0; r<=2; ++r) {
+    if($scope.games[$scope.gameId].board[r][0].mark != "" &&
+      $scope.games[$scope.gameId].board[r][0].mark == $scope.games[$scope.gameId].board[r][1].mark &&
+      $scope.games[$scope.gameId].board[r][1].mark == $scope.games[$scope.gameId].board[r][2].mark) {
+      alert("WINS");
+      }
+  }
 };
 
 
