@@ -16,7 +16,7 @@ a {
 }
 
 body {
-    background: url("/img/Gond.png");
+    background: url('/img/Gond.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
